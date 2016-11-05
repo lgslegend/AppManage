@@ -1,7 +1,7 @@
 # AppManage
 应用管理 AppManage
-*com.lgs.AppManage    
-:smiley:
+
+com.lgs.AppManage    :smiley:
 
 #Thanks
 *应用备份技术 参考了https://github.com/jensstein/oandbackup 
