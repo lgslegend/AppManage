@@ -6,4 +6,6 @@
 
 *选择图标 使用了https://github.com/maplejaw/ImagePicker
 
-*列表或Adapter 等 也部分参考了其他repository ，再次感谢
+*列表或Adapter等等 也部分参考了其他repository ，再次感谢
+
+*如有问题，请@me
