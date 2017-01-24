@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/imageIcon"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp"
+        android:src="@mipmap/ic_launcher_android" />
+
+    <com.eftimoff.patternview.PatternView xmlns:patternview="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/patternView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="20dp"
+        patternview:circleColor="@color/highlighted_text_material_light"
+        patternview:circleSize="100dp"
+        patternview:dotColor="@color/highlighted_text_material_light"
+        patternview:gridColumns="3"
+        patternview:gridRows="3"
+        patternview:pathColor="@color/primary_dark_material_light" />
+
+</LinearLayout>

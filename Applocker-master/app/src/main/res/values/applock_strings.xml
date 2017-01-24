@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name_lockapp">应用锁</string>
+    <string name="app_Manager">管理应用</string>
+    <string name="app_internet">Internet</string>
+    <string name="app_privacy">Privacy</string>
+    <string name="app_price">Price</string>
+    <string name="accuracy">精确度:</string>
+    <string name="very_high">非常高</string>
+    <string name="high">高</string>
+    <string name="low">低</string>
+    <string name="lock_type">Lock Type:</string>
+    <string name="pattern_lock">Pattern Lock</string>
+    <string name="number_lock">Number Lock</string>
+    <string name="settings">设置</string>
+    <string name="lock_request_message">是否将应用锁应用于 %s?</string>
+</resources>

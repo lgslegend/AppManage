@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.codeartist.applocker">
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <uses-permission android:name="android.permission.REORDER_TASKS" />
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"></uses-permission>
+    <uses-permission
+        android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher_android"
+        android:label="@string/app_name_lockapp"
+        tools:replace="android:label"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="com.codeartist.applocker.activity.AppManagerActivity"
+            android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.codeartist.applocker.activity.PasswordSetterActivity"
+            android:excludeFromRecents="true"
+            android:label="@string/app_name_lockapp"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+
+        <activity
+            android:name="com.codeartist.applocker.activity.PatternSetterActivity"
+            android:excludeFromRecents="true"
+            android:finishOnCloseSystemDialogs="true"
+            android:finishOnTaskLaunch="true"
+            android:label="@string/app_name_lockapp"
+            android:exported="true"
+            android:noHistory="true"
+            android:taskAffinity="com.codeartist.applocker.verifyactivity" />
+        <activity
+            android:name="com.codeartist.applocker.activity.SettingsActivity"
+            android:excludeFromRecents="true"
+            android:label="@string/app_name_lockapp" />
+
+        <activity
+            android:name="com.codeartist.applocker.activity.PackageAddActivity"
+            android:excludeFromRecents="true"
+            android:label="@string/app_name_lockapp"
+            android:launchMode="singleInstance"
+            android:theme="@style/AlertDialogStyle" />
+
+
+        <activity
+            android:name="com.codeartist.applocker.activity.DummyActivity"
+            android:excludeFromRecents="true"
+            android:label="@string/app_name_lockapp" />
+
+        <activity
+            android:name="com.codeartist.applocker.activity.PasswordVerifierActivity"
+            android:excludeFromRecents="true"
+            android:label="@string/app_name_lockapp"
+            android:launchMode="singleTask" />
+        <activity
+            android:name="com.codeartist.applocker.activity.PatternVerifierActivity"
+            android:excludeFromRecents="true"
+            android:label="@string/app_name_lockapp"
+            android:launchMode="singleTask" />
+
+
+        <service
+            android:name="com.codeartist.applocker.service.AppLockerService"
+            android:exported="false"
+            android:stopWithTask="false"/>
+
+        <service
+            android:name="com.codeartist.applocker.service.ProtectorLockService"
+            android:exported="false"/>
+
+        <receiver
+            android:name=".receiver.ExpiredReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.REBOOT" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".receiver.PackageRemoveReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".receiver.PackageAddReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
