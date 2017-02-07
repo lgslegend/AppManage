@@ -12,4 +12,6 @@ com.lgs.AppManage    :smiley:
 
 *列表或Adapter等等 也部分参考了其他repository ，再次感谢
 
+*等等未列述完，再次感谢
+
 *如有问题，请@me
